@@ -12,3 +12,5 @@ VALUES
 
 The SQL query added a record to the terms table.
 
+![images](ch5_ex1_results.jpg)
+
