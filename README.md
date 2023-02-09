@@ -1,7 +1,7 @@
 # dba120-exam1
-First exam for DBA 120
 
-Ex. 1
+## Ex. 1
+[ch5_ex1.sql](ch5_ex1.sql)
 
 ...
 
