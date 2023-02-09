@@ -61,4 +61,105 @@ The SQL query created a record in the invoices table.
 ![images](ch5_ex4_results.jpg)
 
 
+## Ex. 5
+[ch5_ex5.sql](ch5_ex5.sql)
+
+```
+INSERT INTO
+  invoice_line_items
+VALUES
+  (115, 1, 160, 180.23, 'Hard drive'),
+  (115, 2, 527, 254.35, 'Exchange Server update');
+```
+
+The SQL query created two records in the invoice_line_items table.
+
+![images](ch5_ex5_results.jpg)
+
+## Ex. 6
+[ch5_ex6.sql](ch5_ex6.sql)
+
+```
+UPDATE
+  invoices
+SET
+  credit_total = invoice_total *.1,
+  payment_total = invoice_total - credit_total
+WHERE
+  invoice_id = 115;
+```
+
+The SQL query updated the invoices table with new numbers in the record with invoice id 115.
+
+![images](ch5_ex6_results.jpg)
+
+
+## Ex. 7
+[ch5_ex7.sql](ch5_ex7.sql)
+
+```
+UPDATE
+  vendors
+SET
+  default_account_number = 403
+WHERE
+  vendor_id = 44;
+```
+
+The SQL query updated the vendors table with a new default account number for the record with vendor id 44.
+
+![images](ch5_ex7_results.jpg)
+
+
+## Ex. 8
+[ch5_ex8.sql](ch5_ex8.sql)
+
+```
+UPDATE
+  invoices
+SET
+  terms_id = 2
+WHERE
+  vendor_id IN (
+    SELECT
+      vendor_id
+    FROM
+      vendors
+    WHERE
+      default_terms_id = 2
+  );
+```
+
+The SQL query updated the invoices table based on information in the vendors table.
+
+![images](ch5_ex8_results.jpg)
+
+## Ex. 9
+[ch5_ex9.sql](ch5_ex9.sql)
+
+```
+DELETE FROM
+  invoice_line_items
+WHERE
+  invoice_id = 115;
+
+DELETE FROM
+  invoices
+WHERE
+  invoice_id = 115;
+```
+
+The SQL query deleted records from the invoice_line_items and invoices tables.
+
+![images](ch5_ex9_invoice_line_items.jpg)
+![images](ch5_ex9_invoices.jpg)
+
+
+
+
+
+
+
+
+
 
